@@ -1,0 +1,258 @@
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans',sans-serif;
+    background: #f4f8f5;
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+    color: #0f1f17;
+    line-height: 1.6;
+}
+
+/* 
+   LAYOUT UTILITIES
+ */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    gap: 30px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/*
+   NAVBAR
+ */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 60px;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(10, 30, 20, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 14px 60px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* Logo */
+.logo {
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #0f1f17;
+}
+
+.logo span {
+    color: #1e7a4c;
+}
+
+/* Links */
+.nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #b1dbc6;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #c9a84c;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #c9a84c;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Login Button */
+.login-btn {
+    background: #1e7a4c;
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #145c38;
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #0f1f17;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        padding: 20px 0;
+
+        display: flex;
+        /* important */
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+
+        transition: all 0.4s ease;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+.hamburger span {
+    width: 24px;
+    height: 2px;
+    background: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-6px);
+}
+/*HERO*/
+.page-hero{
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(4,92,35,0.6), rgba(4,92,35,0.6))url('../images/sigiriya1.jpg') center/cover no-repeat;
+    text-align: center;
+    color: white;
+}
+.page-hero h1{
+    
+}
+/* FOOTER */
+.footer {
+    background: #1e2a24;
+    /* soft dark green */
+    color: #f5f5f5;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 25px;
+}
+
+
+.footer-section {
+    flex: 1 1 200px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #c9a84c;
+    /* gold accent */
+}
+
+.footer-section a {
+    display: block;
+    color: #dcdcdc;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #c9a84c;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #bbb;
+}

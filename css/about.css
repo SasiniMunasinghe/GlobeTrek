@@ -18,9 +18,9 @@ body {
     line-height: 1.6;
 }
 
-/* =========================
+/* 
    LAYOUT UTILITIES
-========================= */
+ */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -44,9 +44,9 @@ body {
     grid-template-columns: repeat(3, 1fr);
 }
 
-/* =========================
+/*
    NAVBAR
-========================= */
+ */
 .navbar {
     position: fixed;
     top: 0;
