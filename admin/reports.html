@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports</title>
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+  <div class="admin-wrapper">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <h2>GlobeTrek Admin</h2>
+
+      <a href="dashboard.html">Dashboard</a>
+      <a href="manage-staff.html">Manage Staff</a>
+       <a href="manage-package.html">Manage Packages</a>
+      <a href="admin-bookings.html">Bookings</a>
+      <a href="reports.html" class="active">Reports</a>
+      <a href="settings.html">Settings</a>
+    </div>
+    
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <h1>Reports & Analytics</h1>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Total Bookings</h3>
+          <p id="bookings">0</p>
+        </div>
+
+        <div class="card">
+          <h3>Revenue</h3>
+          <p id="revenue">0</p>
+        </div>
+
+        <div class="card">
+          <h3>Top Package</h3>
+          <p id="topPackage">-</p>
+        </div>
+
+        <div class="card">
+          <h3>Pending Queries</h3>
+          <p id="queries">0</p>
+        </div>
+
+      </div>
+
+      <h2>Monthly Bookings</h2>
+
+      <div class="chart">
+        <div class="bar" style="height:40%">Jan</div>
+        <div class="bar" style="height:60%">Feb</div>
+        <div class="bar" style="height:30%">Mar</div>
+        <div class="bar" style="height:80%">Apr</div>
+        <div class="bar" style="height:55%">May</div>
+        <div class="bar" style="height:70%">Jun</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="admin-footer">
+    <p>© 2026 GlobeTrek Admin Panel | Secure System</p>
+  </footer>
+  <script src="../js/reports.js"></script>
+</body>
+
+</html>

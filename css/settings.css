@@ -1,0 +1,53 @@
+.section {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 500px;
+}
+
+.section h2 {
+  margin-bottom: 10px;
+  color: #1e3a2f;
+}
+
+.section label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.section input,
+.section select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.section button {
+  margin-top: 15px;
+  background: #1e3a2f;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.section button:hover {
+  background: #2e5a45;
+}
+
+.danger {
+  background: crimson !important;
+}
+
+.note {
+  font-size: 12px;
+  color: gray;
+  margin-top: 8px;
+}

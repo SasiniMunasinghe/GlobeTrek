@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+/* SIDEBAR*/
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #2b4d3f;
+  color: white;
+  padding: 20px;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+
+.sidebar a:hover {
+  background: #3e6b57;
+  transform: translateX(4px);
+}
+
+.main {
+  margin-left: 320px;
+  padding: 30px;
+  max-width: calc(100% - 220px);
+  box-sizing: border-box;
+}
+h1 {
+  color: #1e7a4c;
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+#queriesBox {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+/* QUERY CARD*/
+.query-card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  border-left: 4px solid #2b4d3f;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Name */
+.query-card h3 {
+  margin: 0;
+  color: #1e7a4c;
+  font-size: 18px;
+}
+
+/* Text */
+.query-card p {
+  margin: 0;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Email emphasis */
+.query-card p b {
+  color: #1e7a4c;
+}
+
+/* STATUS badge */
+.query-card p:nth-of-type(3) {
+  font-weight: bold;
+}
+
+/* INPUT */
+.query-card input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.query-card input:focus {
+  border-color: #1e7a4c;
+  box-shadow: 0 0 5px rgba(30,122,76,0.3);
+}
+
+/* BUTTON */
+.query-card button {
+  padding: 10px;
+  background: #1e7a4c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.query-card button:hover {
+  background: #145c38;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+/*STATUS LABEL*/
+.status {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 5px;
+  background: #e7f5ee;
+  color: #1e7a4c;
+}

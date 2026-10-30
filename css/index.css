@@ -51,7 +51,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: rgba(4, 92, 35, 0.85);
+    color: rgba(2, 19, 8, 0.85);
     font-size: 0.85rem;
     letter-spacing: 1.2px;
     font-weight: 500;
@@ -67,58 +67,54 @@ body {
     left: 0;
     width: 0;
     height: 1px;
-    background: #c9a84c;
+    background: #0c8a45;
     transition: width 0.3s;
 }
 
 .nav-links a:hover {
-    color: #c9a84c;
+    color: #11713a;
 }
 
 .nav-links a:hover::after {
     width: 100%;
 }
+.auth-links{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
 
-
-.login-btn {
-    background: transparent !important;
-    border: 1px solid #c9a84c !important;
-    color: #ba9a37;
-    padding: 8px 22px;
-    letter-spacing: 1.5px;
+.login-btn,
+.register-btn {
+    padding: 8px 20px;
     border-radius: 6px;
-    transition: background 0.2s, color 0.2s !important;
+    font-size: 0.8rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 1px solid #0a500d;
+    text-decoration: none;
+}
+
+/* LOGIN */
+.login-btn {
+    background: transparent;
+    color: #045c23;
 }
 
 .login-btn:hover {
-    background: #c9a84c !important;
-    color: #111 !important;
-
+    background: #045c23;
+    color: #fff;
 }
 
-.register-btn::after {
-    display: none;
-}
-
-
+/* REGISTER */
 .register-btn {
-    background: transparent !important;
-    border: 1px solid #c9a84c !important;
-    color: #ba9a37;
-    padding: 8px 22px;
-    letter-spacing: 1.5px;
-    border-radius: 6px;
-    transition: background 0.2s, color 0.2s !important;
+    background: #045c23;
+    color: #fff;
 }
 
 .register-btn:hover {
-    background: #c9a84c !important;
-    color: #111 !important;
-
-}
-
-.register-btn::after {
-    display: none;
+    background: #2f6f4e;
 }
 
 
@@ -189,6 +185,46 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
+}
+
+.user-icon {
+    font-size: 20px;
+    color: #045c23;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* dropdown */
+.dropdown {
+    position: absolute;
+    top: 35px;
+    right: 0;
+
+    background: rgba(15, 25, 20, 0.95);
+    backdrop-filter: blur(12px);
+
+    min-width: 170px;
+    border-radius: 10px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    display: none;
+    flex-direction: column;
+
+    overflow: hidden;
+    z-index: 999;
+}
+.dropdown a {
+    padding: 12px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+
+    transition: background 0.2s ease;
+}
+.dropdown a:hover {
+    background: rgba(255,255,255,0.08);
 }
 .logo{
     font-family: 'Cormorant Garamond',serif;

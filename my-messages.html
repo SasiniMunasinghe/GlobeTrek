@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Messages</title>
+<link rel="stylesheet" href="css/messages.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">Globe<span>Trek</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a> </li>
+            <li><a href="packages.html">Packages</a></li>
+             <li><a href="destinations.html">Destinations</a></li>
+             <li><a href="hotels.html">Hotels</a></li>
+            <li><a href="contact.html">Contact</a> </li>
+   
+
+<li id="userMenu" style="display:none; position:relative;">
+    <a href="#" id="userIcon" class="user-icon">👤</a>
+
+    <div id="dropdown" class="dropdown">
+        <a href="myaccount.html">My Profile</a>
+        <a href="mybookings.html">My Bookings</a>
+        <a href="my-messages.html">My messages</a> 
+        <a href="#" id="logoutBtn">Logout</a>
+    </div>
+</li>
+
+
+
+        </ul>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+<h1>My Messages</h1>
+
+<div id="messagesBox"></div>
+
+<script src="js/my-messages.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

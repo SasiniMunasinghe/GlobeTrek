@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+  <div class="admin-wrapper">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <h2>GlobeTrek Admin</h2>
+
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="manage-staff.html">Manage Staff</a>
+      <a href="manage-package.html">Manage Packages</a>
+      <a href="admin-bookings.html">Bookings</a>
+      <a href="reports.html">Reports</a>
+      <a href="settings.html">Settings</a>
+    </div>
+    <!-- MAIN -->
+
+<div class="main">
+
+    <div id="userMenu" class="user-menu">
+        <a href="#" id="userIcon" class="user-icon">👤</a>
+
+        <div id="dropdown" class="dropdown">
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+    </div>
+
+    <h1>Dashboard Overview</h1>
+
+    
+    
+      <div class="cards">
+    
+
+          <div class="card">
+            <h3>Total Bookings</h3>
+            <p id="bookings">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Active Packages</h3>
+            <p id="activePackages">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Registered Users</h3>
+            <p id="users">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Pending Queries</h3>
+            <p id="queries">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Total Revenue</h3>
+            <p id="revenue">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Top Package</h3>
+            <p id="topPackage">-</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER  -->
+    <footer class="admin-footer">
+      <p>© 2026 GlobeTrek Admin Panel | Secure System</p>
+    </footer>
+
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

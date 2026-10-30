@@ -1,12 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, intial-scale=1.0"0>
+<html lang="en" > 
 
-        <title>Book Your Trip | GlobeTrek</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your GlobeTrek</title>
+    <link rel="stylesheet" href="css/booking.css">
 
-        <link rel="stylesheet" href="css/booking.css">
-        <link href
-    </head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+        
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">Globe<span>Trek</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a> </li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="hotels.html">Hotels</a></li>
+             <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="contact.html">Contact</a> </li>
+            <li class="auth-links" id="authLinks">
+    <a href="login.html" class="login-btn">Login</a>
+    <a href="register.html" class="register-btn">Register</a>
+</li>
+
+<li id="userMenu" style="display:none; position:relative;">
+    <a href="#" id="userIcon" class="user-icon">👤</a>
+
+    <div id="dropdown" class="dropdown">
+        <a href="myaccount.html">My Profile</a>
+        <a href="mybookings.html">My Bookings</a>
+        <a href="my-messages.html">My messages</a> 
+        <a href="#" id="logoutBtn">Logout</a>
+    </div>
+</li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <section class="booking-section">
+
+<h1>Book Your Trip</h1>
+
+<form id="bookingForm">
+
+<label>Selected Package</label>
+<input type="text" id="packageName" readonly>
+
+<label>Full Name</label>
+<input type="text" id="name" required>
+
+<label>Email</label>
+<input type="email" id="email" required>
+<label>Phone</label>
+<input type="number" id="phone" required>
+
+<label>Travel Date</label>
+<input type="date" id="date" required>
+
+<label>Number of Travelers</label>
+<input type="number" id="people" min="1" required>
+
+<label>Special Requests</label>
+<textarea id="notes"></textarea>
+
+<button type="submit">Confirm Booking</button>
+
+</form>
+
+<p id="message"></p>
+
+</section>
+ <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-section">
+                <h4>GlobeTrek</h4>
+                <p>Explore Sri Lanka with curated journeys & unforgettable experiences.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="packages.html">Packages</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 GlobeTrek Sri Lanka. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/booking.js"></script>
+    <script src="js/auth.js"></script>
+
+
+</body>
 </html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>My Account | GlobeTrek</title>
+  <link rel="stylesheet" href="css/myaccount.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="logo">Globe<span>Trek</span></a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="mybookings.html">My Bookings</a></li>
+    <li><a href="my-messages.html">My Messages</a></li>
+    <li><a href="myaccount.html" class="active">My Account</a></li>
+  </ul>
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<section class="account-page">
+  <h1>My Account</h1>
+
+  <div class="account-grid">
+
+    <div class="card">
+      <h3>Profile Details</h3>
+
+      <label>Name</label>
+      <input type="text" id="userName">
+
+      <label>Email</label>
+      <input type="email" id="userEmail">
+
+      <button id="saveProfile">Save Changes</button>
+      <p id="profileMsg"></p>
+    </div>
+
+  
+
+    <div class="card">
+      <h3>Bookings</h3>
+      <p>Total: <span id="totalBookings">0</span></p>
+      <p>Pending: <span id="pendingBookings">0</span></p>
+      <p>Confirmed: <span id="confirmedBookings">0</span></p>
+    </div>
+
+    <div class="card">
+      <h3>Messages</h3>
+      <p>Total: <span id="totalMessages">0</span></p>
+      <p>Replies: <span id="replyCount">0</span></p>
+    </div>
+
+    <div class="card">
+      <h3>Security</h3>
+      <a href="changePassword.html">Change Password</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+        <div class="footer-top">
+            <div class="footer-section">
+                <h4>GlobeTrek</h4>
+                <p>Explore Sri Lanka with curated journeys & unforgettable experiences.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="packages.html">Packages</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 GlobeTrek Sri Lanka. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script src="js/myaccount.js"></script>
+</body>
+</html>

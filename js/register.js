@@ -1,77 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const registerForm = document.getElementById("registerForm");
+    const form = document.getElementById("registerForm");
+    const message = document.getElementById("message");
 
-    if (registerForm) {
-        registerForm.addEventListener("submit", function (e) {
-            e.preventDefault();
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-            let name = document.getElementById("name").value.trim();
-            let email = document.getElementById("email").value.trim();
-            let password = document.getElementById("password").value;
-            let confirmPassword = document.getElementById("confirmPassword").value;
-            let message = document.getElementById("message");
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
 
-            // check empty
-            if (!name || !email || !password || !confirmPassword) {
-                message.style.color = "red";
-                message.innerText = "Please fill all required fields";
-                return;
-            }
+        // password match check
+        if (password !== confirmPassword) {
+            message.style.color = "red";
+            message.innerText = "Passwords do not match";
+            return;
+        }
 
-            // password match
-            if (password !== confirmPassword) {
-                message.style.color = "red";
-                message.innerText = "Passwords do not match";
-                return;
-            }
-
-            // password length
-            if (password.length < 6) {
-                message.style.color = "red";
-                message.innerText = "Password must be at least 6 characters";
-                return;
-            }
-
-            // success
-            message.style.color = "green";
-            message.innerText = "Registration successful!";
-
-            this.reset();
-        });
-    }
-
-
-    const navbar = document.getElementById("navbar");
-
-    if (navbar) {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add("scrolled");
-            } else {
-                navbar.classList.remove("scrolled");
-            }
-        });
-    }
-
-
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("navLinks");
-
-    if (hamburger && navLinks) {
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navLinks.classList.toggle("active");
-        });
-
-        document.querySelectorAll(".nav-links a").forEach(link => {
-            link.addEventListener("click", () => {
-                hamburger.classList.remove("active");
-                navLinks.classList.remove("active");
+        try {
+            const res = await fetch("php/register.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password
+                })
             });
-        });
-    }
 
-    
+            const data = await res.json();
+
+            if (data.status === "success") {
+                message.style.color = "green";
+                message.innerText = "Registered successfully. Redirecting to login...";
+
+                form.reset();
+
+                // redirect after 1.5 seconds
+                setTimeout(() => {
+                    window.location.href = "login.html";
+                }, 1500);
+
+            } else {
+                message.style.color = "red";
+                message.innerText = data.message || "Registration failed";
+            }
+
+        } catch (error) {
+            console.error(error);
+            message.style.color = "red";
+            message.innerText = "Something went wrong";
+        }
+    });
 
 });

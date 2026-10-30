@@ -4,152 +4,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | GlobeTrek Adventures</title>
+    <title>About Us | GlobeTrek</title>
 
     <link rel="stylesheet" href="css/about.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!--NAVIGATION BAR-->
-    <nav class="navbar" id="navbar">
-        <a href="index.html" class="logo">Globe<span>Trek</span></a>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar"> <a href="index.html" class="logo">Globe<span>Trek</span></a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Home</a></li>
+            <li><a href=index.html>Home</a></li>
             <li><a href="about.html">About</a> </li>
             <li><a href="packages.html">Packages</a></li>
             <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="hotels.html">Hotels</a></li>
             <li><a href="contact.html">Contact</a> </li>
-            <li><a href="login.html" class="login-btn">Login</a> </a> </li>
-            <li><a href="register.html" class="register-btn">Register</a></li>
+
+            <li class="auth-links" id="authLinks">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="register-btn">Register</a>
+            </li>
+
+
+
+            <li id="userMenu" style="display:none; position:relative;">
+                <a href="#" id="userIcon" class="user-icon">👤</a>
+
+                <div id="dropdown" class="dropdown">
+                    <a href="myaccount.html">My Profile</a>
+                    <a href="mybookings.html">My Bookings</a>
+                    <a href="my-messages.html">My messages</a>
+                    <a href="#" id="logoutBtn">Logout</a>
+                </div>
+            </li>
+
         </ul>
-
-
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <div class="hamburger" id="hamburger"> <span></span> <span></span> <span></span> </div>
     </nav>
-    <!--HERO-->
-    <section class="about-hero">
-        <div class="overlay">
-            <h1>About Us</h1>
-            <p>Crafting journeys through the soul of Sri Lanka</p>
-        </div>
-    </section>
 
-    <!--COMPANY STORY-->
-    <section class="story">
-        <div class="container-split">
-            <div class="story-text">
-                <h2>Our story</h2>
-                <p>GlobeTrek was built with a simple belief - travel should feel meaningful.
-                    From the ancient rock of Sigiriya to the misty hills of Nuwara Eliya,
-                    we create journeys thta blend culture,comfort, and discovery.
-                </p>
-                <p>
-                    Our mission is to deliver authentic experiences while supporting local communities and preserving
-                    the beauty of Sri Lanka.
-                </p>
-            </div>
-            <img src="images/travel.jpg" alt=traveling>
-        </div>
-    </section>
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Crafting journeys with intention</h1>
+        <p>Luxury travel experiences across Sri Lanka, designed with emotion, culture, and quiet elegance.</p>
+    </div>
+</header>
 
-    <!--MISSION AND VISSION-->
-    <section class="section alt">
-        <div class="container center">
-            <h2>Mission & Vission</h2>
+<!-- STORY -->
+<section class="section">
+    <div class="container split">
 
-            <div class="grid">
-                <div class="card">
-                    <h3>Mission</h3>
-                    <p>Deliverexeptional travel experiences with authenticity and care</p>
-                </div>
-                <div class="card">
-                    <h3>Vision</h3>
-                    <p>To become Sri Lanka's most trusted travel brand</p>
-                </div>
-            </div>
+        <div class="text">
+            <h2>Our Story</h2>
+            <p>GlobeTrek was created with a single belief — travel should feel personal, not packaged.</p>
+            <p>We design experiences that blend culture, nature, and comfort into something unforgettable.</p>
         </div>
 
-    </section>
+        <div class="image">
+            <img src="images/travel.jpg" alt="Travel">
+        </div>
 
-    <!--TEAM-->
-    <section class="section">
-        <div class="container center">
-            <h2>Meet our team</h2>
-            <div class="grid-3">
-                <div class="team-card">
-                    <img src="images/team1.PNG" alt="">
-                    <h3>Amara Silver</h3>
-                    <p>Founder</p>
-                    <small>Believes travel should be meaningful, creating journeys that connect people with culture,
-                        nature, and authentic experiences.</small>
-                </div>
+    </div>
+</section>
 
+<!-- MISSION / VISION -->
+<section class="section alt">
+    <div class="container split">
 
-                <div class="team-card">
-                    <img src="images/team2.PNG" alt="">
-                    <h3>Daniel Weerasinghe</h3>
-                    <p>Consultant</p>
-                    <small>Designs thoughtful travel experiences with a focus on detail, comfort, and seamless
-                        planning.</small>
-                </div>
-            </div>
+        <div class="card">
+            <h3>Our Mission</h3>
+            <p>To deliver authentic Sri Lankan travel experiences with refined comfort and thoughtful detail.</p>
+        </div>
+
+        <div class="card">
+            <h3>Our Vision</h3>
+            <p>To become Sri Lanka’s most trusted luxury travel brand rooted in culture and connection.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- TEAM -->
+<section class="section">
+    <div class="container center">
+        <h2>Meet the people behind the journey</h2>
+        <p class="sub">Small team. Big standards. Obsessive attention to detail.</p>
+
+        <div class="team-grid">
+
             <div class="team-card">
-                <img src="images/team3.PNG" alt="">
-                <h3>Naduni Silva</h3>
-                <p>Manager</p>
-                <small>Ensures every journey runs smoothly, delivering exceptional service from start to finish.</small>
-            </div>
-        </div>
-        </div>
-        </div>
-    </section>
-
-
-    <!--AWARDS-->
-
-    <section class="awards">
-        <h2>Our Achievements</h2>
-
-        <div class="awards-slider" id="awardsSlider">
-
-            <div class="award-card">
-                <h3>Best Travel Agency 2024</h3>
-                <p>Recognized for outstanding service and customer satisfaction across Sri Lanka.</p>
+                <img src="images/team1.png">
+                <h3> Julliete Perera</h3>
+                <span>Founder & Strategy Lead</span>
             </div>
 
-            <div class="award-card">
-                <h3>Sustainable Tourism Award</h3>
-                <p>Honored for promoting eco-friendly and community-based travel experiences.</p>
+            <div class="team-card">
+                <img src="images/team3.png">
+                <h3>Sarah Fernando</h3>
+                <span>Operations Director</span>
             </div>
 
-            <div class="award-card">
-                <h3>Top Adventure Organizer</h3>
-                <p>Delivered premium adventure tours including hiking, surfing, and wildlife safaris.</p>
+            <div class="team-card">
+                <img src="images/team2.png">
+                <h3>Kasun Jay</h3>
+                <span>Travel Experience Lead</span>
             </div>
 
-            <div class="award-card">
-                <h3>Excellence in Hospitality</h3>
-                <p>Awarded for creating unforgettable and personalized travel experiences.</p>
+            <div class="team-card">
+                <img src="images/team4.png">
+                <h3>Nimal Silva</h3>
+                <span>Senior Tour Guide</span>
             </div>
 
         </div>
-    </section>
-    <!--CTA-->
+    </div>
+</section>
 
-    <section class="about-cta">
-        <h2>
-            <h2>Start Your Journey With Us</h2>
-        </h2>
+<!-- CTA -->
+<section class="cta">
+    <h2>Let’s design your next escape</h2>
+    <a href="packages.html">Explore Packages</a>
+</section>
 
-        <a href="packages.html" class="btn">Explore Packages</a>
-    </section>
-
-    <!--FOOTER-->
+<!-- FOOTER -->
+<script src="js/about.js"></script>
+    <script src="js/auth.js"></script>
     <footer class="footer">
         <div class="footer-top">
             <div class="footer-section">
@@ -178,8 +160,5 @@
         </div>
     </footer>
 
-
-    <script src="js/about.js"></script>
 </body>
-
 </html>

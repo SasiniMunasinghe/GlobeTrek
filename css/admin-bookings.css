@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7f6;
+    display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    background: #1e2a24;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    color: #c9a84c;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    color: #c9a84c;
+}
+
+/* MAIN */
+.main {
+    margin-left: 240px;
+    padding: 30px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* FILTER BUTTONS */
+.filter-bar {
+    margin-bottom: 20px;
+}
+
+.filter-bar button {
+    padding: 8px 14px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    background: #1e2a24;
+    color: white;
+    border-radius: 5px;
+}
+
+.filter-bar button:hover {
+    background: #c9a84c;
+}
+
+/* GRID */
+.booking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+/* CARD */
+.booking-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.booking-card h3 {
+    margin: 0;
+    color: #1e2a24;
+}
+
+.status {
+    font-weight: bold;
+}
+
+/* STATUS COLORS */
+.pending { color: orange; }
+.confirmed { color: green; }
+.cancelled { color: red; }
+
+/* BUTTONS */
+.actions {
+    margin-top: 10px;
+}
+
+.actions button {
+    margin-right: 5px;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.confirm {
+    background: green;
+    color: white;
+}
+
+.cancel {
+    background: red;
+    color: white;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Manage Bookings</title>
+
+<link rel="stylesheet" href="../css/admin-bookings.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>GlobeTrek Admin</h2>
+
+  <a href="dashboard.html">Dashboard</a>
+  <a href="manage-staff.html">Manage Staff</a>
+   <a href="manage-package.html">Manage Packages</a>
+  <a href="admin-bookings.html" class="active">Bookings</a>
+  <a href="reports.html">Reports</a>
+  <a href="settings.html">Settings</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <h1>Booking Management</h1>
+
+  <div class="filter-bar">
+    <button onclick="filterBookings('all')">All</button>
+    <button onclick="filterBookings('pending')">Pending</button>
+    <button onclick="filterBookings('confirmed')">Confirmed</button>
+    <button onclick="filterBookings('cancelled')">Cancelled</button>
+  </div>
+
+  <div id="bookingContainer" class="booking-grid"></div>
+
+</div>
+
+<script src="../js/admin-bookings.js"></script>
+
+</body>
+</html>

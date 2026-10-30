@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Packages</title>
+    <link rel="stylesheet" href="../css/admin-packages.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>GlobeTrek Staff</h2>
+        <a href="../admin/dashboard.html">Dashboard</a>
+        <a href="../admin/manage-package.html">Manage Packages</a>
+        <a href="../admin/admin-bookings.html">Manage Bookings</a>
+        <a href="../admin/reports.html">Reports</a>
+        <a href="../admin/settings.html">Settings</a>
+    </div>
+
+    <div class="main">
+
+        <h1>Manage Packages</h1>
+
+        <div class="form-box">
+            <h3>Add / Update Package</h3>
+
+            <input type="hidden" id="packageId">
+
+            <input type="text" id="pkgName" placeholder="Package Name">
+            <input type="text" id="pkgPrice" placeholder="Price">
+            <input type="text" id="pkgDuration" placeholder="Duration">
+            <input type="text" id="pkgDesc" placeholder="Description">
+            <input type="file" id="pkgImage">
+
+            <button onclick="savePackage()">Save Package</button>
+        </div>
+
+        <table id="packageTable">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Duration</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </table>
+
+    </div>
+
+    <script src="../js/admin-packages.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Staff</title>
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+<div class="admin-wrapper">
+<div class="sidebar">
+  <h2>GlobeTrek Admin</h2>
+
+  <a href="dashboard.html">Dashboard</a>
+  <a href="manage-staff.html">Manage Staff</a>
+   <a href="manage-packages.html">Manage Packages</a>
+  <a href="admin-bookings.html">Bookings</a>
+  <a href="reports.html">Reports</a>
+  <a href="settings.html">Settings</a>
+</div>
+
+<div class="main">
+
+  <h1>Manage Staff</h1>
+
+  <!-- ADD STAFF FORM -->
+  <div class="form-box">
+    <h3>Add New Staff</h3>
+
+    <input type="text" id="name" placeholder="Staff Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="role" placeholder="Role (e.g. Manager)">
+
+    <button onclick="addStaff()">Add Staff</button>
+  </div>
+
+  <!-- STAFF LIST -->
+  <h3>All Users</h3>
+  <table id="staffTable">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Action</th>
+    </tr>
+  </table>
+
+</div>
+</div>
+<!-- FOOTER  -->
+<footer class="admin-footer">
+  <p>© 2026 GlobeTrek Admin Panel | Secure System</p>
+</footer>
+
+<script src="../js/manage-staff.js"></script>
+</body>
+</html>

@@ -10,18 +10,15 @@
 html {
     scroll-behavior: smooth;
 }
+
 body {
-    background:
-        linear-gradient(135deg, #f4f8f5 0%, #e7f1ea 100%);
+    background: #f4f8f5;
+    color: #0f1f17;
 }
+
+
 /*NAVIGATION BAR*/
-.hero-image img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 20px;
-}
+
 .navbar {
     display: flex;
     position: fixed;
@@ -35,13 +32,15 @@ body {
 }
 
 .navbar.scrolled {
-    background: #0f1f17;
+    background: rgba(14, 14, 14, 0.96);
     padding: 14px 60px;
     box-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(12px);
 }
 
-
+.navbar.scrolled .nav-links a {
+    color: white;
+}
 
 .nav-links {
     display: flex;
@@ -52,7 +51,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color:#1b5e20;
+    color: rgba(2, 19, 8, 0.85);
     font-size: 0.85rem;
     letter-spacing: 1.2px;
     font-weight: 500;
@@ -68,42 +67,56 @@ body {
     left: 0;
     width: 0;
     height: 1px;
-    background: #c9a84c;
+    background: #0c8a45;
     transition: width 0.3s;
 }
-.navbar.scrolled .nav-links a {
-    color: #e6f0ea;
-}
-
 
 .nav-links a:hover {
-    color: #c9a84c;
+    color: #11713a;
 }
 
 .nav-links a:hover::after {
     width: 100%;
 }
+.auth-links{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
 
-
-.login-btn {
-    background: transparent !important;
-    border: 1px solid #c9a84c !important;
-    color: #ba9a37;
-    padding: 8px 22px;
-    letter-spacing: 1.5px;
+.login-btn,
+.register-btn {
+    padding: 8px 20px;
     border-radius: 6px;
-    transition: background 0.2s, color 0.2s !important;
+    font-size: 0.8rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 1px solid #0a500d;
+    text-decoration: none;
+}
+
+/* LOGIN */
+.login-btn {
+    background: transparent;
+    color: #045c23;
 }
 
 .login-btn:hover {
-    background: #c9a84c !important;
-    color: #111 !important;
-
+    background: #045c23;
+    color: #fff;
 }
 
-.login-btn::after {
-    display: none;
+/* REGISTER */
+.register-btn {
+    background: #045c23;
+    color: #fff;
 }
+
+.register-btn:hover {
+    background: #2f6f4e;
+}
+
 
 .hamburger {
     display: none;
@@ -112,7 +125,7 @@ body {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 750px) {
 
     .hamburger {
         display: flex;
@@ -133,7 +146,7 @@ body {
         padding: 20px 0;
 
         display: flex;
-        /* important */
+        
         transform: translateY(-120%);
         opacity: 0;
         pointer-events: none;
@@ -173,15 +186,45 @@ body {
     position: relative;
     overflow: hidden;
 }
-.slide::after {
-    content: "";
+
+.user-icon {
+    font-size: 20px;
+    color: #045c23;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* dropdown */
+.dropdown {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.4),
-        rgba(0,0,0,0.6)
-    );
+    top: 35px;
+    right: 0;
+
+    background: rgba(15, 25, 20, 0.95);
+    backdrop-filter: blur(12px);
+
+    min-width: 170px;
+    border-radius: 10px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    display: none;
+    flex-direction: column;
+
+    overflow: hidden;
+    z-index: 999;
+}
+.dropdown a {
+    padding: 12px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+
+    transition: background 0.2s ease;
+}
+.dropdown a:hover {
+    background: rgba(255,255,255,0.08);
 }
 .logo{
     font-family: 'Cormorant Garamond',serif;
@@ -209,6 +252,30 @@ body {
     color: #c9a84c;
 }
 
+
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.6)
+    );
+}
 .slide {
     position: absolute;
     inset: 0;

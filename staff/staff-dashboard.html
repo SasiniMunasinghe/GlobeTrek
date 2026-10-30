@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+    <link rel="stylesheet" href="../css/staff.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>GlobeTrek Staff</h2>
+    <a href="../staff/staff-dashboard.html">Dashboard</a>
+    <a href="../staff/manage-packages.html">Manage Packages</a>
+    <a href="../staff/manage-bookings.html">Manage Bookings</a>
+    <a href="../staff/respond-queries.html">Customer Queries</a>
+</div>
+
+<div class="main">
+    <div id="userMenu" class="user-menu">
+        <a href="#" id="userIcon" class="user-icon">👤</a>
+        <div id="dropdown" class="dropdown">
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+    </div>
+
+    <h1>Staff Dashboard</h1>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Pending Bookings</h3>
+            <p id="pendingBookings">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Active Packages</h3>
+            <p id="activePackages">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Customer Queries</h3>
+            <p id="queries">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Completed Tours</h3>
+            <p id="completedTours">0</p>
+        </div>
+    </div>
+</div>
+
+<script src="../js/staff-dashboard.js"></script>
+</body>
+</html>

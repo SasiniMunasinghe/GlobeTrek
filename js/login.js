@@ -1,79 +1,106 @@
-document.addEventListener("DOMContentLoaded", () =>{
+document.addEventListener("DOMContentLoaded", () => {
 
-    const loginForm = document.getElementById("loginForm");
-    if(loginForm){
-        loginForm.addEventListener("submit", function(e){
-            e.preventDefault();
+  const form = document.getElementById("loginForm");
+  const message = document.getElementById("message");
 
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
-            let message = document.getElementById("message");
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+  const navbar = document.getElementById("navbar");
 
-            if(email === "" || password ==="") {
-                message.style.color ="red";
-                message.innerText = "Please fill all fields";
-                return;
-            }
+  
+  // LOGIN HANDLER
+  
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-            let founderUser = users.find(user =>
-                user.email === email && user.password === password
-            );
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
 
-            if(!founderUser){
-                message.style.color = "red";
-                message.innerText = "Invalid email or password";
-                return;
-            }
-
-            localStorage.setItem("loggedIn", "true");
-            localStorage.setItem("roke", founderUser.role);
-
-            message.style.color = "green";
-            message.innerText = "Login successful... redirecting";
-
-            setTimeout(() => {
-                if(founderUser.role === "admin"){
-                    window.location.href= "admin/dashboard.html";
-                }
-                else if(founderUser.role === "staff"){
-                    window.location.href = "staff/dashboard.html";
-                } 
-                else{
-                    window.location.href = "index.html";
-                }
-            }, 800);
-
-        })
-        const navbar = document.getElementById("navbar");
-
-    if (navbar) {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add("scrolled");
-            } else {
-                navbar.classList.remove("scrolled");
-            }
-        });
-    }
-
-
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("navLinks");
-
-    if (hamburger && navLinks) {
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navLinks.classList.toggle("active");
+      try {
+        const res = await fetch("php/login.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email, password })
         });
 
-        document.querySelectorAll(".nav-links a").forEach(link => {
-            link.addEventListener("click", () => {
-                hamburger.classList.remove("active");
-                navLinks.classList.remove("active");
-            });
-        });
-    }
+        const data = await res.json();
 
-    
-    }
-})
+        console.log("LOGIN RESPONSE:", data);
+
+        if (data.status === "success") {
+
+          message.innerText = "Welcome back…";
+          message.style.color = "green";
+
+          setTimeout(() => {
+
+            // force password change
+            if (data.forceChangePassword === true) {
+              window.location.href = "changePassword.html";
+              return;
+            }
+
+            // role-based routing
+            switch (data.role) {
+              case "admin":
+                window.location.href = "/webAssignment/admin/dashboard.html";
+                break;
+
+              case "staff":
+                window.location.href = "/webAssignment/staff/staff-dashboard.html";
+                break;
+
+              default:
+                window.location.href = "index.html";
+                break;
+            }
+
+          }, 800);
+
+        } else {
+          message.innerText = data.message;
+          message.style.color = "red";
+        }
+
+      } catch (err) {
+        console.error("Login error:", err);
+        message.innerText = "Something went wrong. Try again.";
+        message.style.color = "red";
+      }
+    });
+  }
+
+ 
+  // HAMBURGER MENU
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+      });
+    });
+  }
+
+  
+  // NAVBAR SCROLL EFFECT
+ 
+  if (navbar) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  }
+
+});

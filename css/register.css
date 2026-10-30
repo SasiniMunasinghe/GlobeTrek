@@ -155,7 +155,7 @@ body {
         padding: 20px 0;
 
         display: flex;
-        /* important */
+       
         transform: translateY(-120%);
         opacity: 0;
         pointer-events: none;
